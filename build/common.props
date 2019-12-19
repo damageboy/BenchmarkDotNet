@@ -19,10 +19,10 @@
     <SuppressNETCoreSdkPreviewMessage>True</SuppressNETCoreSdkPreviewMessage>
   </PropertyGroup>
 
-  <PropertyGroup Condition=" '$(IsVisualBasic)' != 'true' And $(TargetFramework.StartsWith('net4')) ">
+  <PropertyGroup Condition=" '$(Language)' != 'VB' And $(TargetFramework.StartsWith('net4')) ">
     <DefineConstants>$(DefineConstants);CLASSIC</DefineConstants>
   </PropertyGroup>
-  <PropertyGroup Condition=" '$(IsVisualBasic)' != 'true' And ('$(TargetFramework)' == 'netcoreapp2.0' Or '$(TargetFramework)' == 'netcoreapp2.1') ">
+  <PropertyGroup Condition=" '$(Language)' != 'VB' And ('$(TargetFramework)' == 'netcoreapp2.0' Or '$(TargetFramework)' == 'netcoreapp2.1') ">
     <DefineConstants>$(DefineConstants);CORE</DefineConstants>
   </PropertyGroup>
 
@@ -33,7 +33,7 @@
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
   </PropertyGroup>
   
-  <PropertyGroup Condition=" '$(IsVisualBasic)' != 'true' AND '$(IsFsharp)' != 'true' ">
+  <PropertyGroup Condition=" '$(Language)' != 'VB' AND '$(Language)' != 'F#' ">
     <LangVersion>7.2</LangVersion>
     
     <Major>0</Major>
